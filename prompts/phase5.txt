@@ -1,0 +1,19 @@
+PHASE 5: PROJECT-BASED LEARNING
+
+PROMPT 14:
+> Mini-Project Scope: I want to build a simple 'Product Showcase' site to practice. Define the scope for me: It should use 1) Dynamic routes for products, 2) A layout, 3) Server-side data fetching, and 4) One interactive client component. What are the specific files I will need to create?
+
+RESPONSE:
+- app/page.js (home)
+- app/products/[id]/page.js (dynamic)
+- app/layout.js (root)
+- app/components/AddToCart.js ('use client')
+- app/data/products.js (mock data)
+
+---
+
+PROMPT 15:
+> Don't give me the full solution. Instead, ask me diagnostic questions to help me find the bug myself. My error is: Error: A component is trying to use a client hook inside a server component. What should I check first?
+
+RESPONSE:
+Check the file's first line. Is there 'use client';? If not, add it. If yes, check imports. Are you importing a component that might be using hooks (like useState) but is missing its own 'use client'; directive?

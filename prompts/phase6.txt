@@ -1,0 +1,23 @@
+PHASE 6: DEPLOYMENT & TROUBLESHOOTING
+
+PROMPT 16:
+> I'm ready to deploy my Next.js app to Vercel. Walk me through the necessary steps, including any environment variable configuration and how to understand the build logs. What are common gotchas for a first-time deploy?
+
+RESPONSE:
+Push to GitHub. Import project in Vercel dashboard. It auto-detects Next.js. Add env vars in Vercel UI. Build logs will show SSG/SSR pages. Gotcha: Ensure next.config.js is correct if using custom settings.
+
+---
+
+PROMPT 17:
+> How do I connect my Next.js frontend to a separate backend API (like a Node.js/Express or Django server) while avoiding CORS issues? Should I use Next.js API Routes as a proxy?
+
+RESPONSE:
+Use Next.js API Routes as a proxy. Your client fetches to /api/proxy (same origin). Your Route Handler fetches to the external backend and returns the response. No CORS needed.
+
+---
+
+PROMPT 18:
+> My React testing strategy used Jest and React Testing Library. How does testing a Next.js App Router application differ? How do I test Server Components, Client Components, and data fetching?
+
+RESPONSE:
+Testing Server Components is tricky—they're async. You might mock fetch. Consider testing the output via integration/E2E tests (Playwright, Cypress). Client Components test the same as before.

@@ -1,0 +1,32 @@
+PHASE 3: ADVANCED PATTERNS & INTEGRATION
+
+PROMPT 9:
+> In React, I used React Router. In Next.js App Router, how do I implement: a) Nested layouts? b) Dynamic routes like /blog/[slug]? c) Protected (authenticated) routes? Show me the file structure and the basic code for each.
+
+RESPONSE:
+- a) Nested layouts: app/(auth)/layout.js for login pages, app/(dashboard)/layout.js
+- b) Dynamic: app/blog/[slug]/page.js
+- c) Protected: In layout.js, check auth in Server Component, redirect via redirect() or useRouter in client
+
+---
+
+PROMPT 10:
+> That's too much for my current level. First, show me the simplest possible pattern for protecting a route without any external auth library—just a mock check in a Server Component that redirects. We can add complexity later.
+
+RESPONSE:
+Fair. In app/dashboard/layout.js:
+
+import { redirect } from 'next/navigation';
+if (!isAuth) { redirect('/login'); }
+
+That's it for a basic check.
+
+---
+
+PROMPT 11:
+> In my React apps, I used Zustand/Redux for global state. With Next.js server components and server-side data fetching, what parts of my state should move to the server, and what should remain on the client? Give me a new mental model.
+
+RESPONSE:
+- Server State (DB data, user sessions) → Server Components via fetch
+- UI State (form inputs, modals) → Client Components / Zustand
+- Move more to server than you think. Use Client Components only for interactivity

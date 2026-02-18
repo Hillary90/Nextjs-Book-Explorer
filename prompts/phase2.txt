@@ -1,0 +1,34 @@
+PHASE 2: CORE CONCEPTS DEEP DIVE
+
+PROMPT 5:
+> Explain Server-Side Rendering (SSR) in Next.js like I'm a React dev who only knows Client-Side Rendering (CSR). What happens in the browser, the network tab, and the initial HTML for each?
+
+RESPONSE:
+- CSR: Browser gets empty HTML <div id="root">, downloads JS, builds UI
+- SSR: Browser gets full HTML from server, then downloads JS for interactivity (hydration). Check "View Page Source" to see the difference
+
+---
+
+PROMPT 6:
+> Give me a small, practical coding exercise. I need to build a BlogPost component that: 1. Fetches post data from a mock API on the server. 2. Renders the content statically at build time. 3. Has an interactive 'Like' button that uses client-side state. Provide the code structure, and I'll ask questions as I write.
+
+RESPONSE:
+Create app/blog/[slug]/page.js. Use params to get the slug. Fetch post. Use generateStaticParams for SSG. Create a separate 'use client' component for the Like button with useState.
+
+---
+
+PROMPT 7:
+> I'm confused between 'Static Site Generation' (SSG), 'Server-Side Rendering' (SSR), and 'Incremental Static Regeneration' (ISR) in Next.js. For each one, create a real-world use case example and explain the trade-offs.
+
+RESPONSE:
+- SSG (blog post): Built once at deploy, super fast
+- SSR (dashboard): Built fresh on each request, dynamic
+- ISR (product page): SSG but periodically re-builds in background (best of both)
+
+---
+
+PROMPT 8:
+> As a React dev, I'm used to debugging in the browser with useState and useEffect logs. How does debugging change when most of my component logic runs on the server? What tools and strategies should I use now?
+
+RESPONSE:
+Your console.log in a Server Component prints to your terminal (Node.js), not the browser console. Use browser DevTools for Network, Elements. Use VSCode debugger for server code. Embrace terminal logs.

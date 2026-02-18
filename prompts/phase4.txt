@@ -1,0 +1,30 @@
+PHASE 4: API INTEGRATION & DATA FETCHING
+
+PROMPT 12:
+> Generate a code snippet for a Next.js 14 Route Handler (app/api/posts/route.js) that simulates creating a new blog post. Then, show me how to call it from a Client Component using the fetch API, including handling loading and error states.
+
+RESPONSE:
+// app/api/posts/route.js
+export async function POST(request) {
+  const body = await request.json();
+  // Save to DB
+  return Response.json({ success: true });
+}
+
+// Client Component
+await fetch('/api/posts', {
+  method: 'POST',
+  body: JSON.stringify(data)
+});
+
+---
+
+PROMPT 13:
+> What are the top 5 performance optimizations that are unique or especially important in Next.js compared to a standard React app?
+
+RESPONSE:
+1. <Image /> component for automatic optimization
+2. <Link> for client-side navigation
+3. Font optimization with next/font
+4. Automatic code splitting
+5. Streaming with Suspense

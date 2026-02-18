@@ -1,0 +1,32 @@
+PHASE 1: ORIENTATION & BRIDGING FROM REACT
+
+PROMPT 1:
+> I'm a React developer and want to learn Next.js. Create a structured learning plan that focuses on the new mental models I need, not just re-learning React.
+
+RESPONSE:
+- Week 0: App Router fundamentals (layouts, pages, routing)
+- Week 1: Data fetching (Server Components, caching)
+- Week 2: Rendering strategies (SSR, SSG, ISR)
+- Week 3: Full project integrating all concepts. Focus on unlearning SPA habits
+
+---
+
+PROMPT 2:
+> Act as a senior dev. Explain the core philosophical shift from a React SPA (using create-react-app) to a Next.js application. Use an analogy.
+
+RESPONSE:
+React SPA is like building a ship in a bottle entirely inside the bottle (client). Next.js is building most of the ship in a dry dock (server), then placing the finished hull in the bottle, only adding the moving parts (interactivity) inside.
+
+---
+
+PROMPT 3:
+> Next.js is a React framework that enables server-side rendering and static site generation. That's just the textbook definition. I need a practical, concrete difference. For a simple 'About page', show me the exact code difference for fetching and displaying data in a React component vs. a Next.js App Router component.
+
+RESPONSE:
+- React (SPA): You'd fetch in useEffect, manage loading state
+- Next.js (App Router): Your component can be async. You await fetch() directly, render the data. No useEffect, useState for fetch needed
+
+---
+
+PROMPT 4:
+> Tooling & Setup: I'm used to npm start and configuring my own bundler. Guide me through setting up a new Next.js 14 project with Tailwind CSS. Then, map the new Next.js scripts and project structure (app/, public/, etc.) to their equivalents in my old React setup.
