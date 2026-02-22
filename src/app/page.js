@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import SearchBar from '@/components/search/SearchBar'
 import BookGrid from '@/components/books/BookGrid'
 import { useBooks } from '@/hooks/useBooks'
-R
+
 export default function Home() {
   const router = useRouter()
   const { books, loading } = useBooks({ page: 1 })
