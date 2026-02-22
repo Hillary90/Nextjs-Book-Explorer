@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import SearchBar from '@/components/search/SearchBar'
 import FilterPanel from '@/components/search/FilterPanel'
@@ -8,7 +8,7 @@ import Pagination from '@/components/ui/Pagination'
 import { useBooks } from '@/hooks/useBooks'
 import { ITEMS_PER_PAGE } from '@/lib/constants'
 
-export default function BooksPage() {
+function BooksContent() {
   const searchParams = useSearchParams()
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '')
@@ -39,5 +39,13 @@ export default function BooksPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function BooksPage() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <BooksContent />
+    </Suspense>
   )
 }
