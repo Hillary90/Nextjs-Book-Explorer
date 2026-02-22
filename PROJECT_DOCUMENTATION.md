@@ -927,7 +927,7 @@ This Book Explorer project demonstrates modern Next.js development practices, in
 The application is production-ready and can be deployed to Vercel with zero configuration.
 
 **Repository**: https://github.com/Hillary90/Nextjs-Book-Explorer
-**Live Demo**: [Deploy to see live URL]
+**Live Demo**: https://bookexplorer-ebon.vercel.app
 
 ---
 

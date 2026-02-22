@@ -112,7 +112,7 @@ This project uses the [Google Books API](https://developers.google.com/books) to
 3. Import your repository
 4. Deploy with one click
 
-The app will be live at your Vercel URL.
+The app is live at: **https://bookexplorer-ebon.vercel.app**
 
 ## Documentation
 
