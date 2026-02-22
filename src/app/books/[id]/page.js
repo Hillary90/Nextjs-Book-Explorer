@@ -1,7 +1,7 @@
 import { fetchBookById } from '@/lib/api'
 import BookDetails from '@/components/books/BookDetails'
 
-export default async function BookPage() {
+export default async function BookPage({ params }) {
   const { id } = await params
   const book = await fetchBookById(id)
 
